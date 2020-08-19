@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head> <link rel="stylesheet" href="c.css">
+  <script>
+       var modal = document.getElementById('id01');
 
+       window.onclick = function(event) {
+           if (event.target == modal) {
+               modal.style.display = "none";
+           }
+       }
+   </script>
 </head>
-<body><div class="container"><script src="j.js"></script>
-  <h1>NHCEiMAP</h1>
+<body><div class="container">
+ <h1>NHCEiMAP</h1>
   <div class="title">
     <ul>
-      <li><a href="o.html">Refresh</a></li>
-      <li><a href="bank.html">Bank</a></li>
-      <li><a href="cse.html">CSE</a></li>
-      <li><a href="eee.html">Mech. & EEE</a></li>
-      <li><a href="is.html">ISE & Civil</a></li>
-      <li><a href="hostel.html">Hostel</a></li>
-      <li><a href="tango.html">Tango</a></li>
-      <li><a href="mba.html">Mba</a></li>
-      <li><a href="library.html">Library</a></li>
-      <li><a href="temple.html">Temple</a></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='o.png'">Refresh</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='bank.png'">Bank</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='cse.png'">CSE</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='eee.png'">Mech. & EEE</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='is.png'">ISE & Civil</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='hostel.png'">Hostel</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='tango.png'">Tango</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='mba.png'">Mba</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='library.png'">Library</button></li>
+      <li><button class="buttons" onclick="document.getElementById('map').src='temple.png'">Temple</button></li>
+
 
     </ul>
   </div>
   <img id="map" src="o.png" height="400px" width="700px">
+</div>
+<button class="reg" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Register +</button>
 
-</div></body></html>
+  <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+      <form class="modal-content animate" action="http://localhost/NHCEiMAP/action_page.php" method="post">
+          <div class="kontainer">
+            <label for="fname">Event:</label><br>
+            <input type="radio" id="Dance" name="event" value="dance"><label for="Dance">Dance</label><br>
+            <input type="radio" id="StreetPlay" name="event" value="streetplay"><label for="StreetPlay">StreetPlay</label><br>
+            <input type="radio" id="Mime" name="event" value="mime"><label for="Mime">Mime</label><br>
+            <input type="radio" id="Singing" name="event" value="singing"><label for="Singing">Singing</label><br>
+            <input type="radio" id="Mega Event" name="event" value="mega event"><label for="Mega Event">Mega Event</label><br>
+            <label for="Name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter full name"><br><br>
+            <button class="reg" type="reset">Cancel</button>
+            <button class="reg" name="submit_b" type="submit">Done</button>
+          </div>
+      </form>
+  </div>
+</body></html>
